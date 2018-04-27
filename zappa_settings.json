@@ -1,0 +1,19 @@
+{
+    "production": {
+        "app_function": "pypi_s3.app",
+        "aws_region": "us-east-1",
+        "profile_name": null,
+        "project_name": "pypi-s3",
+        "runtime": "python2.7",
+        "s3_bucket": "zappa-pypy-metamorphsoftware",
+        "events": [{
+                    "function": "pypi_s3.process_upload",
+                    "event_source": {
+                          "arn":  "arn:aws:s3:::pypi.metamorphsoftware.com",
+                          "events": [
+                            "s3:ObjectCreated:*"
+                          ]
+                       }
+                    }]
+          }
+}

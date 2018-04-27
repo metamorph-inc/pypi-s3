@@ -1,0 +1,4 @@
+# pip >= 10 does not work with zappa https://github.com/Miserlou/Zappa/issues/1478
+pip==9.0.3
+zappa
+flask
