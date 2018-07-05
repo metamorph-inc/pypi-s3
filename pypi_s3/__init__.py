@@ -73,7 +73,7 @@ def generate_folder(folders_whitelist):
         # n.b. must end with .html to avoid recursion
         key = (folder + '/index.html' if len(folder) else 'index.html')
         print "Uplodating " + key
-        s3_client.put_object(Bucket=s3_bucket, Key=key, Body=index, ContentType='text/html;charset=UTF-8')
+        s3_client.put_object(Bucket=s3_bucket, Key=key, Body=index, ContentType='text/html;charset=UTF-8', CacheControl='max-age=300')
 
     return 'Success'
 
